@@ -2,7 +2,7 @@
 
 ## Demo
 
-[**click live demo of the project**](https://dominiksiejka.github.io/BillSplitterApp)
+[**click live demo of the project**](https://dominiksiejka.github.io/NotesApp/)
 
 ![NotesApp preview](./assets/notes.jpg)
 
@@ -35,7 +35,7 @@ There are two buttons at the top of the screen first is a 'add new task' and the
 with BASH
 
 # clone the remote repo to your local one
-$ git clone https://github.com/dominiksiejka/BillSplitterApp.git
+$ git clone https://github.com/dominiksiejka/NotesApp.git
 
 # open the index.html file or use your code editor to open it with live server
 
@@ -48,4 +48,4 @@ $ git clone https://github.com/dominiksiejka/BillSplitterApp.git
 
 ## License
 
-- MIT © [Dominik Siejka ](https://github.com/dominiksiejka/BillSplitterApp)
+- MIT © [Dominik Siejka ](https://github.com/dominiksiejka/NotesApp)
