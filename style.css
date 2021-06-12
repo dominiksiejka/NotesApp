@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --currentHeight: 100vh;
+}
+body {
+  background-image: linear-gradient(
+    259deg,
+    rgba(58, 180, 123, 1) 7%,
+    rgba(29, 97, 253, 1) 55%,
+    rgba(252, 176, 200, 1) 91%
+  );
+
+  min-height: var(--currentHeight);
+  font-family: "Oswald", sans-serif;
+}
+header {
+  display: flex;
+  align-items: center;
+  width: 60%;
+}
+header h1,
+header i {
+  font-size: 40px;
+  text-shadow: 0 0 4px white;
+  margin: 0 3px 0 2px;
+}
+
+.tools button {
+  font-family: "Oswald", sans-serif;
+  padding: 5px 10px;
+  font-size: 15px;
+  border: none;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  text-shadow: 0 0 1px black;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+div.container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+aside.tools {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: column;
+}
+
+aside.tools button i {
+  margin-right: 10px;
+}
+aside.tools button {
+  outline: none;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+aside.tools button:nth-of-type(1) i {
+  color: greenyellow;
+}
+aside.tools button:nth-of-type(2) i {
+  color: red;
+}
+button:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+}
+@media screen and (min-width: 600px) {
+  aside.tools {
+    flex-direction: row;
+  }
+  aside.tools button {
+    margin: 0 5px;
+  }
+}
+div.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.modal div.details {
+  width: 90%;
+  min-height: 300px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 5px 4px rgba(255, 255, 255, 1);
+  padding: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.modal div.details textarea {
+  font-family: "Architects Daughter", cursive;
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.8);
+  outline: none;
+  min-height: 80px;
+  transition: 0.2s linear;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  letter-spacing: 1.2px;
+  max-width: 400px;
+  min-width: 100px;
+  max-height: 150px;
+}
+
+.modal div.details select {
+  width: 50%;
+  outline: none;
+  flex-basis: 30px;
+  text-align-last: center;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(252, 176, 200, 0.6);
+  box-shadow: 0 0 4px 2px rgba(252, 176, 200, 0.6);
+  color: black;
+  font-size: 16px;
+  text-shadow: 0 0 3px white;
+  font-family: "Architects Daughter", cursive;
+}
+.modal div.details select:hover {
+  background-color: rgba(252, 176, 200);
+  box-shadow: 0 0 4px 2px rgb(252, 176, 200);
+  letter-spacing: 1.2px;
+
+  text-shadow: 0 0 3px aqua;
+}
+div.details button {
+  border: none;
+  background-color: rgba(252, 176, 200);
+  box-shadow: 0 0 4px 2px rgb(252, 176, 200);
+}
+
+label#title {
+  font-family: "Architects Daughter", cursive;
+  font-size: 30px;
+  text-shadow: 0 0 2px white;
+  margin-top: -10px;
+}
+div.details textarea:focus {
+  box-shadow: 0 0 2px 2px blue;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+.modal div.details textarea::placeholder {
+  color: white;
+  letter-spacing: 1.2px;
+}
+div.details textarea:focus {
+  box-shadow: 0 0 2px 2px blue;
+  background-color: white;
+  border-radius: 10px;
+}
+.details h3 {
+  font-size: 20px;
+  letter-spacing: 1.2px;
+}
+div.details button#sub {
+  padding: 5px 20px;
+  letter-spacing: 1.2px;
+  outline: none;
+}
+
+circle#circ {
+  transform-origin: 50% 50%;
+  animation: circleSpin 1.4s linear infinite;
+}
+div.time {
+  display: none;
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  align-items: center;
+}
+div.time span {
+  margin-left: 5px;
+}
+@keyframes circleSpin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+div.singleNote {
+  font-family: "Architects Daughter", cursive;
+  width: 90%;
+  min-width: 250px;
+  min-height: 300px;
+  max-width: 600px;
+  margin: 20px 1%;
+  overflow: hidden;
+  background-color: white;
+
+  display: flex;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  flex-direction: column;
+}
+
+div.singleNote h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  padding: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+div.singleNote h4 span {
+  width: 20%;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+div.singleNote h4 i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+div.singleNote h4 i:nth-of-type(1) {
+  color: black;
+  text-shadow: 0 0 5px green;
+}
+div.singleNote h4 i:nth-of-type(2) {
+  color: black;
+  text-shadow: 0 0 5px red;
+}
+div.singleNote p {
+  padding: 12px;
+  text-align: justify;
+}
+main.notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 50px 0 20px;
+  padding: 10px;
+}
+.edit-field {
+  position: absolute;
+  display: none;
+
+  font-size: 1rem;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 300px;
+  z-index: 10;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.edit-field h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.edit-field h4 i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.edit-field textarea {
+  flex-grow: 1;
+  border: none;
+  font-size: 1rem;
+  font-family: "Architects Daughter", cursive;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+.edit-field textarea:focus {
+  outline: none;
+}
+.modal-edit-task {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.edit-field h4 i:hover {
+  color: white;
+}
+.modal-edit-task.active {
+  display: block;
+}
+@media screen and (min-width: 580px) {
+  div.singleNote,
+  .edit-field {
+    width: 45%;
+  }
+}
+@media screen and (min-width: 830px) {
+  div.singleNote,
+  .edit-field {
+    width: 30%;
+  }
+}
