@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My notes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Modak&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <i class="far fa-sticky-note"></i>
+        <h1>My notes</h1>
+      </header>
+      <aside class="tools">
+        <button id="addtask"><i class="fas fa-plus"></i> Add new task</button
+        ><button id="removetask">
+          <i class="fas fa-minus"></i> Delete all
+        </button>
+      </aside>
+    </div>
+    <main class="notes"></main>
+    <div class="modal">
+      <div class="details">
+        <label id="title" for="task">Quick Note</label>
+        <select name="tasks" id="task">
+          <option value="default" selected disabled>Choose category</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Work">Work</option>
+          <option value="Studies">Studies</option>
+          <option value="Personal">Personal</option>
+          <option value="Duties">Duties</option>
+        </select>
+        <h3>Note text content:</h3>
+        <textarea
+          placeholder="wpisz treść notatki..."
+          maxlength="200"
+        ></textarea>
+        <button id="sub">Submit</button>
+      </div>
+    </div>
+    <div class="time">
+      <svg width="40" height="40">
+        <circle
+          id="circ"
+          cx="20"
+          cy="20"
+          r="10"
+          fill="transparent"
+          stroke="white"
+          stroke-width="4"
+          stroke-dasharray="48"
+        />
+      </svg>
+      <span>adding...</span>
+    </div>
+    <div class="modal-edit-task"></div>
+  </body>
+</html>
